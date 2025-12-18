@@ -1,0 +1,68 @@
+{% extends 'entidades/index.html' %}
+
+
+{% block titulo %}
+    <h1 class="mb-5">Cursos</h1>    
+{% endblock titulo %}
+    
+
+{% block contenido %}
+<table>
+    <tr>
+        <td width="200"><h2>Cursos</h2></td>
+        <td>
+            <a
+            href="{% url 'cursoForm' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+            </a>
+        </td>        
+    </tr>
+</table>
+
+{% if not cursos %}
+    <table>
+        Sin datos para ese patron de busqueda.
+    </table>   
+{% else %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre de Curso</th>
+                <th>Comision</th>
+                <th>Profesor</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for c in cursos  %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.nombre }}</td>
+                <td>{{ c.comision }}</td>
+                <td>{{ c.profesor }}</td>
+                <td>    
+                    <a
+                    href='{% url 'cursoUpdate' c.id %}'
+                    class="btn btn-primary"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                    ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                    </a>
+                    <a
+                    href='{% url 'cursoDelete' c.id %}'
+                    class="btn btn-danger"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                    ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                    </a>                  
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+    
+
+
+{% endblock contenido %}
+    
