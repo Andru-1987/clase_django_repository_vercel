@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "buildCommand": "bash build_files.sh",
-  "outputDirectory": ".",
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/api/index"
+      "src": "academia/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "academia/wsgi.py"
     }
   ]
 }
