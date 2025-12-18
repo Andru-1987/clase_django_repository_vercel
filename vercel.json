@@ -1,6 +1,7 @@
 {
   "version": 2,
   "buildCommand": "bash build_files.sh",
+  "outputDirectory": ".",
   "rewrites": [
     {
       "source": "/(.*)",
