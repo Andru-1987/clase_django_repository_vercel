@@ -9,5 +9,5 @@ dependencies = [
     "pillow>=12.0.0",
     "pytest>=9.0.2",
     "pytest-django>=4.11.1",
-    "whitenoise=6.11.0"
+    "whitenoise>=6.11.0",
 ]
