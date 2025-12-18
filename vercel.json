@@ -1,15 +1,11 @@
 {
   "version": 2,
   "buildCommand": "bash build_files.sh",
-  "builds": [
-    {
-      "src": "academia/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "runtime": "python3.12" 
-      }
+  "functions": {
+    "academia/wsgi.py": {
+      "maxDuration": 10
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",

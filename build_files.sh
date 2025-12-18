@@ -1,14 +1,14 @@
 #!/bin/bash
-
-# Salir inmediatamente si un comando falla
 set -e
 
-echo "➡️ Instalando dependencias..."
-# Vercel usa python3 por defecto
-python3 -m pip install -r requirements.txt
+echo "➡️ Iniciando Build con uv..."
 
+# 1. Instalar dependencias usando el lockfile (Vercel ya lo hace, pero esto asegura consistencia)
+uv sync
+
+# 2. Ejecutar collectstatic de Django
+# Usamos 'uv run' para asegurarnos de usar el venv correcto
 echo "➡️ Ejecutando collectstatic..."
-# Esto usa la configuración de STATIC_ROOT de tu settings.py
-python3 manage.py collectstatic --noinput --clear
+uv run python manage.py collectstatic --noinput --clear
 
 echo "✅ Build finalizado con éxito"
