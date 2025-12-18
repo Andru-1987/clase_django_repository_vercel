@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "buildCommand": "bash build_files.sh",
   "builds": [
     {
       "src": "academia/wsgi.py",
@@ -14,6 +15,13 @@
     {
       "src": "/(.*)",
       "dest": "academia/wsgi.py"
+    }
+  ],
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index"
     }
   ]
 }
