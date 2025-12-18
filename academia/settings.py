@@ -78,13 +78,21 @@ WSGI_APPLICATION = 'api.wsgi.app'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "curso.db",
+#     }
+# }
+
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        # "NAME": BASE_DIR / "curso.db",
-        "NAME": ":memory:"
+        "ENGINE": "django.db.backends.dummy",
     }
 }
+
+
 
 
 # Password validation
