@@ -27,6 +27,7 @@ DEBUG = False
 
 # api/settings.py para hacer uso de vercel
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+CSRF_TRUSTED_ORIGINS = ['https://*.vercel.app']
 
 # Application definition
 
@@ -128,8 +129,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_DIRS= BASE_DIR / "entidades" / "static"
+# STATIC_DIRS= [BASE_DIR / "entidades" / "static"]
+STATICFILES_DIRS = [BASE_DIR / "entidades" / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
