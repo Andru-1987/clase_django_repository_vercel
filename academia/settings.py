@@ -137,11 +137,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
-import os
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # Collects files into a 'staticfiles' directory
-# Add your static files directory to STATICFILES_DIRS if you have a project-level static folder
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'entidades' ,'static'),)
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [
+    BASE_DIR / "entidades" / "static"
+]
