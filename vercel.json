@@ -1,15 +1,10 @@
 {
   "version": 2,
   "buildCommand": "bash build_files.sh",
-  "functions": {
-    "academia/wsgi.py": {
-      "maxDuration": 10
-    }
-  },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "academia/wsgi.py"
+      "source": "/(.*)",
+      "destination": "/api/index"
     }
   ]
 }
