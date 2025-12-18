@@ -1,12 +1,14 @@
 #!/bin/bash
+
+# Salir inmediatamente si un comando falla
 set -e
 
-echo "➡️ Build: preparando static files"
+echo "➡️ Instalando dependencias..."
+# Vercel usa python3 por defecto
+python3 -m pip install -r requirements.txt
 
-mkdir -p public/static
+echo "➡️ Ejecutando collectstatic..."
+# Esto usa la configuración de STATIC_ROOT de tu settings.py
+python3 manage.py collectstatic --noinput --clear
 
-# Copia todos los static de las apps
-cp -r entidades/static/* public/static/
-
-echo "✅ Static files copiados a public/static"
-ls -R public/static
+echo "✅ Build finalizado con éxito"
