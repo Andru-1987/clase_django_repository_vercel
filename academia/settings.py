@@ -70,9 +70,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = "academia.wsgi.application"
-# api/settings.py
-WSGI_APPLICATION = 'api.wsgi.app'
+WSGI_APPLICATION = "academia.wsgi.application"
 
 
 # Database
