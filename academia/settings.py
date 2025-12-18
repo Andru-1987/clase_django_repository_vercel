@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-n7rr3mpb257cvif6g*-#h39_3gbu*^=4og_0mxsmujygp&h_6h
 DEBUG = False
 
 # api/settings.py para hacer uso de vercel
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', 'tu-proyecto.vercel.app']
 CSRF_TRUSTED_ORIGINS = ['https://*.vercel.app']
 
 # Application definition
