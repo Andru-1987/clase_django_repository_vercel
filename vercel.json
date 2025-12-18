@@ -9,10 +9,6 @@
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/entidades/static/$1"
-    },
-    {
       "src": "/(.*)",
       "dest": "academia/wsgi.py"
     }
