@@ -81,7 +81,8 @@ WSGI_APPLICATION = 'api.wsgi.app'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "curso.db",
+        # "NAME": BASE_DIR / "curso.db",
+        "NAME": ":memory:"
     }
 }
 
